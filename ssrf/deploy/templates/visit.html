@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Visit page{% endblock %}
+
+
+{% block content %}
+<br />
+<h1>Visit any web site!</h1><br/>
+{% if res %}
+<div>{{ res }}</div>
+  <br />
+{% endif %}
+<form action="/visit" method="POST">
+  <div class="form-group">
+    <label for="url">url</label>
+    <input type="text" class="form-control" id="url" placeholder="url" name="url" value="http://google.com" required>
+  </div>
+  <br />
+  <button type="submit" class="btn btn-success">Visit</button>
+</form>
+{% endblock %}
